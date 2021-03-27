@@ -5,20 +5,21 @@ import json
 
 app = Flask(__name__)
 
+
 @app.route("/", methods=['GET'])
 def hello():
     return "Hello from Python!"
 
-@app.route("/name", methods=['GET'])
-def helloUser():
-    return "Hello " + request.args.get('username') + " to dialogflow-rest demo webhook!!!"
+def helloUser(jsonRequestBody):
+    return "Hello " + jsonRequestBody["queryResult"]["action"]["parameters"]["person"]["name"] + " from dialogflow-rest demo webhook!!!"
 
 
 @app.route("/handleWebhookRequest", methods=['POST'])
 def handleWebhookRequest():
     jsonRequestBody = request.get_json()
-    actionMethod = jsonRequestBody["queryResult"]["action"]
-    jsonResponse = {"fulfillmentText": actionMethod}
+    #actionMethod = jsonRequestBody["queryResult"]["action"]
+
+    jsonResponse = {"fulfillmentText": helloUser(jsonRequestBody)}
     return jsonify(jsonResponse)
 
 if __name__ == "__main__":
