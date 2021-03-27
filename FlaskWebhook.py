@@ -6,7 +6,7 @@ app = Flask(__name__)
 def hello():
     return "Hello from Python!"
 
-@app.route("/", methods=['GET'])
+@app.route("/name/", methods=['GET'])
 def helloUser(name):
     return "Hello " + name + " to dialogflow-rest demo webhook!!!"
 
