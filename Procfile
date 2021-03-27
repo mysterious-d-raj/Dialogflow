@@ -1,1 +1,1 @@
-web: gunicorn FlaskWebhook:app
+web: python FlaskWebhook.py
