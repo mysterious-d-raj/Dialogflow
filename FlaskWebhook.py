@@ -17,7 +17,8 @@ def helloUser():
 @app.route("/handleWebhookRequest", methods=['POST'])
 def handleWebhookRequest():
     jsonRequestBody = request.get_json()
-    jsonResponse = {"fulfillmentText": jsonRequestBody}
+    actionMethod = jsonRequestBody["queryResult"]["action"]
+    jsonResponse = {"fulfillmentText": actionMethod}
     return jsonify(jsonResponse)
 
 if __name__ == "__main__":
