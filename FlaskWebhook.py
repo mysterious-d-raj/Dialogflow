@@ -7,7 +7,7 @@ def hello():
     return "Hello from Python!"
 
 @app.route("/", methods=['GET'])
-def hello(name):
+def helloUser(name):
     return "Hello " + name + " to dialogflow-rest demo webhook!!!"
 
 if __name__ == "__main__":
