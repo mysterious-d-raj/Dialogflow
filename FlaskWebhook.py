@@ -19,7 +19,7 @@ def handleWebhookRequest():
     jsonRequestBody = request.get_json()
     #actionMethod = jsonRequestBody["queryResult"]["action"]
 
-    jsonResponse = {"fulfillmentText": helloUser(jsonRequestBody["queryResult"]["action"]["parameters"]["person"]["name"])}
+    jsonResponse = {"fulfillmentText": helloUser(jsonRequestBody["queryResult"]["parameters"]["person"]["name"])}
     return jsonify(jsonResponse)
 
 if __name__ == "__main__":
