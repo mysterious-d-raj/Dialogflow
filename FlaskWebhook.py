@@ -1,6 +1,7 @@
 import os
 from flask import Flask
-from flask import request
+from flask import request, jsonify
+import json 
 
 app = Flask(__name__)
 
@@ -11,6 +12,12 @@ def hello():
 @app.route("/name", methods=['GET'])
 def helloUser():
     return "Hello " + request.args.get('username') + " to dialogflow-rest demo webhook!!!"
+
+
+@app.route("/handleWebhookRequest", methods=['POST'])
+def handleWebhookRequest():
+    jsonResponse = {"fulfillmentText": "Response from webhook."}
+    return jsonify(jsonResponse)
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
