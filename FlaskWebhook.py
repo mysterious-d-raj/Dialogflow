@@ -1,5 +1,7 @@
 import os
 from flask import Flask
+from flask import request
+
 app = Flask(__name__)
 
 @app.route("/", methods=['GET'])
@@ -7,8 +9,8 @@ def hello():
     return "Hello from Python!"
 
 @app.route("/name", methods=['GET'])
-def helloUser(name):
-    return "Hello " + name + " to dialogflow-rest demo webhook!!!"
+def helloUser():
+    return "Hello " + request.args.get('username') + " to dialogflow-rest demo webhook!!!"
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
