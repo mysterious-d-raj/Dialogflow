@@ -1,0 +1,75 @@
+Request 
+
+{
+  "responseId": "d06d20ae-414c-4aef-ad43-ee88eb829fa4-421809c4",
+  "queryResult": {
+    "queryText": "Ravindra",
+    "action": "request_callback",
+    "parameters": {
+      "phone-number": "49485858",
+      "person": {
+        "name": "Ravindra"
+      }
+    },
+    "allRequiredParamsPresent": true,
+    "fulfillmentText": "Okay will call Ravindra at 49485858",
+    "fulfillmentMessages": [
+      {
+        "text": {
+          "text": [
+            "Okay will call Ravindra at 49485858"
+          ]
+        }
+      }
+    ],
+    "outputContexts": [
+      {
+        "name": "projects/r2dsoft-pxje/agent/sessions/d327d816-409f-4e6e-9e26-3582f68a0bc4/contexts/__system_counters__",
+        "parameters": {
+          "no-input": 0,
+          "no-match": 0,
+          "phone-number": "49485858",
+          "phone-number.original": "49485858",
+          "person": {
+            "name": "Ravindra"
+          },
+          "person.original": "Ravindra"
+        }
+      },
+      {
+        "name": "projects/r2dsoft-pxje/agent/sessions/d327d816-409f-4e6e-9e26-3582f68a0bc4/contexts/askname-followup",
+        "lifespanCount": 1,
+        "parameters": {
+          "phone-number": "49485858",
+          "phone-number.original": "49485858",
+          "person": {
+            "name": "Ravindra"
+          },
+          "person.original": "Ravindra"
+        }
+      }
+    ],
+    "intent": {
+      "name": "projects/r2dsoft-pxje/agent/intents/79cac102-2798-4d2b-91f6-c1c5dad426fb",
+      "displayName": "CallbackRequest"
+    },
+    "intentDetectionConfidence": 1,
+    "languageCode": "en",
+    "sentimentAnalysisResult": {
+      "queryTextSentiment": {
+        "score": 0.3,
+        "magnitude": 0.3
+      }
+    }
+  },
+  "originalDetectIntentRequest": {
+    "source": "DIALOGFLOW_CONSOLE",
+    "payload": {}
+  },
+  "session": "projects/r2dsoft-pxje/agent/sessions/d327d816-409f-4e6e-9e26-3582f68a0bc4"
+}
+
+responseId
+{
+  "fulfillmentText": "Hi Ravindra, we will call you back at 49485858. Talk to you soon."
+}
