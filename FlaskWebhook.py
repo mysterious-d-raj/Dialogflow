@@ -10,6 +10,7 @@ app = Flask(__name__)
 def hello():
     return "Welcome to Requirement to Developenet solutions !!! \n We are in process to build our website." 
 
+#Internal method
 def helloUser(personName):
     return "Hello " + personName + " from dialogflow-rest demo webhook!!!"
 
